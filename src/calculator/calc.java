@@ -15,6 +15,7 @@ public class calc {
 				//System.out.println(d);
 				if (z == 5) {
 					System.out.println("Closing program...");
+					scan.close();
 					break;
 				}
 				if (z > 0 && z < 5) {
