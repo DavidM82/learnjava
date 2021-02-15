@@ -15,8 +15,13 @@ public class LongestIncrementMain {
 		}
 		System.out.print("\n");
 		
-		ArrayList<Integer> longest = sg.longestSubsequence();
-		System.out.println("Longest Subsequence: " + longest.toString());
+		Object[] longest = sg.longestSubsequence();
+		System.out.print("Longest Subsequence: ");
+		System.out.print("{ ");
+		for (int i = 0; i < longest.length; i++) {
+			System.out.print(longest[i] + " ");
+		}
+		System.out.print("}");
 	}
 	
 }

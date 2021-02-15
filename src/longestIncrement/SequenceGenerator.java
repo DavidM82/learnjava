@@ -28,9 +28,9 @@ public class SequenceGenerator {
 		return array;
 	}
 	
-	public ArrayList<Integer> longestSubsequence(){
-		ArrayList<Integer> longest = new ArrayList<Integer>();
+	public Object[] longestSubsequence(){
 		ArrayList<Integer> temp = new ArrayList<Integer>();
+		Object[] subsequence = {};
 		
 		for (int i: array) {
 			if (temp.size() == 0) {
@@ -39,17 +39,14 @@ public class SequenceGenerator {
 			}
 			if (temp.get(temp.size()-1) >= i) {
 				//System.out.println(i + " is less than " + temp.get(temp.size()-1));
-				if (temp.size() > longest.size()) {
-					longest.clear();
-					for(int j: temp) {
-						longest.add(j);
-					}
+				if (temp.size() > subsequence.length) {
+					subsequence = temp.toArray();
 					//System.out.println("longest array is now: " + longest);
 				}
 				temp.clear();
 			}
 			temp.add(i);	
 		}
-		return longest;
+		return subsequence;
 	}
 }
